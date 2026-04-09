@@ -47,6 +47,7 @@
             this.lstOrder = new System.Windows.Forms.ListBox();
             this.btn_order = new System.Windows.Forms.Button();
             this.reset_button = new System.Windows.Forms.Button();
+            this.process1 = new System.Diagnostics.Process();
             this.Menu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -182,6 +183,7 @@
             this.chkSauce.Name = "chkSauce";
             this.chkSauce.Size = new System.Drawing.Size(93, 24);
             this.chkSauce.TabIndex = 3;
+            this.chkSauce.TabStop = false;
             this.chkSauce.Text = "소스 추가";
             this.chkSauce.UseVisualStyleBackColor = true;
             // 
@@ -194,6 +196,7 @@
             this.chkCheese.Name = "chkCheese";
             this.chkCheese.Size = new System.Drawing.Size(93, 24);
             this.chkCheese.TabIndex = 2;
+            this.chkCheese.TabStop = false;
             this.chkCheese.Text = "치즈 추가";
             this.chkCheese.UseVisualStyleBackColor = true;
             // 
@@ -206,6 +209,7 @@
             this.chkCoke.Name = "chkCoke";
             this.chkCoke.Size = new System.Drawing.Size(58, 24);
             this.chkCoke.TabIndex = 1;
+            this.chkCoke.TabStop = false;
             this.chkCoke.Text = "콜라";
             this.chkCoke.UseVisualStyleBackColor = true;
             // 
@@ -281,6 +285,16 @@
             this.reset_button.UseVisualStyleBackColor = false;
             this.reset_button.Click += new System.EventHandler(this.reset_button_Click);
             // 
+            // process1
+            // 
+            this.process1.StartInfo.Domain = "";
+            this.process1.StartInfo.LoadUserProfile = false;
+            this.process1.StartInfo.Password = null;
+            this.process1.StartInfo.StandardErrorEncoding = null;
+            this.process1.StartInfo.StandardOutputEncoding = null;
+            this.process1.StartInfo.UserName = "";
+            this.process1.SynchronizingObject = this;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -328,6 +342,7 @@
         private System.Windows.Forms.PictureBox burger_photo;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Diagnostics.Process process1;
     }
 }
 

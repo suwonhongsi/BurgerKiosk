@@ -13,6 +13,7 @@ namespace BurgerKiosk
             this.AcceptButton = btn_order;
             this.CancelButton = reset_button;
 
+            // 실시간 업데이트 연결
             rdoHamburger.CheckedChanged += Selection_Changed;
             rdoBulgogiBurger.CheckedChanged += Selection_Changed;
             rdoChickenBurger.CheckedChanged += Selection_Changed;
@@ -21,13 +22,35 @@ namespace BurgerKiosk
             chkCheese.CheckedChanged += Selection_Changed;
             chkSauce.CheckedChanged += Selection_Changed;
 
-            this.Shown += Form1_Shown;
+            // 탭 설정: 리스트와 체크박스 2~4번은 탭에서 제외
+            lstOrder.TabStop = false;
+            chkFried.TabStop = true;  // 옵션 그룹의 '입구' 역할
+            chkCoke.TabStop = false;
+            chkCheese.TabStop = false;
+            chkSauce.TabStop = false;
+
+            // 체크박스 방향키 이동 이벤트 연결
+            chkFried.KeyDown += CheckBox_Navigation;
+            chkCoke.KeyDown += CheckBox_Navigation;
+            chkCheese.KeyDown += CheckBox_Navigation;
+            chkSauce.KeyDown += CheckBox_Navigation;
+
+            this.Shown += (s, e) => { ClearAllSelections(); this.ActiveControl = null; };
         }
 
-        private void Form1_Shown(object sender, EventArgs e)
+        // 체크박스 안에서 방향키로 이동하는 로직
+        private void CheckBox_Navigation(object sender, KeyEventArgs e)
         {
-            ClearAllSelections();
-            this.ActiveControl = null;
+            if (e.KeyCode == Keys.Down || e.KeyCode == Keys.Right)
+            {
+                this.SelectNextControl((Control)sender, true, true, true, true);
+                e.Handled = true;
+            }
+            else if (e.KeyCode == Keys.Up || e.KeyCode == Keys.Left)
+            {
+                this.SelectNextControl((Control)sender, false, true, true, true);
+                e.Handled = true;
+            }
         }
 
         private void Selection_Changed(object sender, EventArgs e)
@@ -74,6 +97,7 @@ namespace BurgerKiosk
             chkSauce.Checked = false;
 
             rdoHamburger.TabStop = true;
+            chkFried.TabStop = true;
 
             lstOrder.Items.Clear();
             lblTotalCost.ForeColor = Color.Black;
