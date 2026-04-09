@@ -16,5 +16,10 @@ namespace BurgerKiosk
         {
             InitializeComponent();
         }
+
+        private void bulgogi_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
