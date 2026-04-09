@@ -11,59 +11,59 @@ namespace BurgerKiosk
             InitializeComponent();
         }
 
-        private void order_button_Click(object sender, EventArgs e)
+        private void btn_order_Click(object sender, EventArgs e)
         {
-            if (!hamburger.Checked && !bulgogi.Checked && !chicken.Checked)
+            if (!rdoHamburger.Checked && !rdoBulgogiBurger.Checked && !rdoChickenBurger.Checked)
             {
-                total.Text = "메뉴를 선택하세요.";
-                total.ForeColor = Color.Red;
+                lblTotalCost.Text = "메뉴를 선택하세요.";
+                lblTotalCost.ForeColor = Color.Red;
                 return;
             }
 
             int totalCost = 0;
-            list.Items.Clear();
-            total.ForeColor = Color.Black; 
+            lstOrder.Items.Clear();
+            lblTotalCost.ForeColor = Color.Black; 
 
-            if (hamburger.Checked)
+            if (rdoHamburger.Checked)
             {
                 totalCost += 5000;
-                list.Items.Add("햄버거 5,000원");
+                lstOrder.Items.Add("햄버거 5,000원");
             }
-            else if (bulgogi.Checked)
+            else if (rdoBulgogiBurger.Checked)
             {
                 totalCost += 4000;
-                list.Items.Add("불고기버거 4,000원");
+                lstOrder.Items.Add("불고기버거 4,000원");
             }
-            else if (chicken.Checked)
+            else if (rdoChickenBurger.Checked)
             {
                 totalCost += 3000;
-                list.Items.Add("치킨버거 3,000원");
+                lstOrder.Items.Add("치킨버거 3,000원");
             }
 
-            if (fried.Checked) { totalCost += 3500; list.Items.Add("감자튀김 3,500원"); }
-            if (coke.Checked) { totalCost += 2500; list.Items.Add("콜라 2,500원"); }
-            if (cheese.Checked) { totalCost += 1500; list.Items.Add("치즈 추가 1,500원"); }
-            if (source.Checked) { totalCost += 500; list.Items.Add("소스 추가 500원"); }
+            if (chkFried.Checked) { totalCost += 3500; lstOrder.Items.Add("감자튀김 3,500원"); }
+            if (chkCoke.Checked) { totalCost += 2500; lstOrder.Items.Add("콜라 2,500원"); }
+            if (chkCheese.Checked) { totalCost += 1500; lstOrder.Items.Add("치즈 추가 1,500원"); }
+            if (chkSauce.Checked) { totalCost += 500; lstOrder.Items.Add("소스 추가 500원"); }
 
-            total.Text = "총 금액 : " + totalCost.ToString("N0") + "원";
+            lblTotalCost.Text = "총 금액 : " + totalCost.ToString("N0") + "원";
 
         }
 
         private void reset_button_Click(object sender, EventArgs e)
         {
-            hamburger.Checked = false;
-            bulgogi.Checked = false;
-            chicken.Checked = false;
-            fried.Checked = false;
-            coke.Checked = false;
-            cheese.Checked = false;
-            source.Checked = false;
+            rdoHamburger.Checked = false;
+            rdoBulgogiBurger.Checked = false;
+            rdoChickenBurger.Checked = false;
+            chkFried.Checked = false;
+            chkCoke.Checked = false;
+            chkCheese.Checked = false;
+            chkSauce.Checked = false;
 
-            list.Items.Clear();
-            total.ForeColor = Color.Black;
-            total.Text = "총 금액 : 0원";
+            lstOrder.Items.Clear();
+            lblTotalCost.ForeColor = Color.Black;
+            lblTotalCost.Text = "총 금액 : 0원";
         }
-        
+
         private void bulgogi_CheckedChanged(object sender, EventArgs e)
         {
         }
