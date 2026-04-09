@@ -11,19 +11,32 @@ namespace BurgerKiosk
             InitializeComponent();
 
             this.AcceptButton = btn_order;
-
             this.CancelButton = reset_button;
+
+            rdoHamburger.CheckedChanged += Selection_Changed;
+            rdoBulgogiBurger.CheckedChanged += Selection_Changed;
+            rdoChickenBurger.CheckedChanged += Selection_Changed;
+            chkFried.CheckedChanged += Selection_Changed;
+            chkCoke.CheckedChanged += Selection_Changed;
+            chkCheese.CheckedChanged += Selection_Changed;
+            chkSauce.CheckedChanged += Selection_Changed;
+
+            this.Shown += Form1_Shown;
         }
 
-        private void btn_order_Click(object sender, EventArgs e)
+        private void Form1_Shown(object sender, EventArgs e)
         {
-            if (!rdoHamburger.Checked && !rdoBulgogiBurger.Checked && !rdoChickenBurger.Checked)
-            {
-                lblTotalCost.Text = "메뉴를 선택하세요.";
-                lblTotalCost.ForeColor = Color.Red;
-                return;
-            }
+            ClearAllSelections();
+            this.ActiveControl = null;
+        }
 
+        private void Selection_Changed(object sender, EventArgs e)
+        {
+            UpdateOrderInfo();
+        }
+
+        private void UpdateOrderInfo()
+        {
             int totalCost = 0;
             lstOrder.Items.Clear();
             lblTotalCost.ForeColor = Color.Black;
@@ -40,7 +53,17 @@ namespace BurgerKiosk
             lblTotalCost.Text = "총 금액 : " + totalCost.ToString("N0") + "원";
         }
 
-        private void reset_button_Click(object sender, EventArgs e)
+        private void btn_order_Click(object sender, EventArgs e)
+        {
+            if (!rdoHamburger.Checked && !rdoBulgogiBurger.Checked && !rdoChickenBurger.Checked)
+            {
+                lblTotalCost.Text = "메뉴를 선택하세요.";
+                lblTotalCost.ForeColor = Color.Red;
+                return;
+            }
+        }
+
+        private void ClearAllSelections()
         {
             rdoHamburger.Checked = false;
             rdoBulgogiBurger.Checked = false;
@@ -50,21 +73,20 @@ namespace BurgerKiosk
             chkCheese.Checked = false;
             chkSauce.Checked = false;
 
+            rdoHamburger.TabStop = true;
+
             lstOrder.Items.Clear();
             lblTotalCost.ForeColor = Color.Black;
             lblTotalCost.Text = "총 금액 : 0원";
-
-            rdoHamburger.Checked = true;
         }
 
-        private void bulgogi_CheckedChanged(object sender, EventArgs e)
-        { 
-
-        }
-
-        private void hamburger_CheckedChanged(object sender, EventArgs e)
+        private void reset_button_Click(object sender, EventArgs e)
         {
-
+            ClearAllSelections();
+            this.ActiveControl = null;
         }
+
+        private void bulgogi_CheckedChanged(object sender, EventArgs e) { }
+        private void hamburger_CheckedChanged(object sender, EventArgs e) { }
     }
 }
