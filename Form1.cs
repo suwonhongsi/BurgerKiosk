@@ -44,6 +44,7 @@ namespace BurgerKiosk
             if (cheese.Checked) { totalCost += 1500; list.Items.Add("치즈 추가 1,500원"); }
             if (source.Checked) { totalCost += 500; list.Items.Add("소스 추가 500원"); }
 
+            total.ForeColor = Color.Black;
             total.Text = "총 금액 : " + totalCost.ToString("N0") + "원";
         }
 
@@ -51,7 +52,8 @@ namespace BurgerKiosk
         {
             if (!hamburger.Checked && !bulgogi.Checked && !chicken.Checked)
             {
-                MessageBox.Show("메뉴를 선택하세요.");
+                total.Text = "메뉴를 선택하세요."; 
+                total.ForeColor = Color.Red;
                 return;
             }
             MessageBox.Show(total.Text + " 주문이 완료되었습니다.");
@@ -68,6 +70,7 @@ namespace BurgerKiosk
             source.Checked = false;
 
             list.Items.Clear();
+            total.ForeColor = Color.Black;
             total.Text = "총 금액 : 0원";
         }
 
