@@ -124,7 +124,7 @@
             this.rdoChickenBurger.Location = new System.Drawing.Point(6, 219);
             this.rdoChickenBurger.Name = "rdoChickenBurger";
             this.rdoChickenBurger.Size = new System.Drawing.Size(87, 24);
-            this.rdoChickenBurger.TabIndex = 0;
+            this.rdoChickenBurger.TabIndex = 2;
             this.rdoChickenBurger.TabStop = true;
             this.rdoChickenBurger.Text = "치킨버거";
             this.rdoChickenBurger.UseVisualStyleBackColor = true;
@@ -138,7 +138,7 @@
             this.rdoBulgogiBurger.Location = new System.Drawing.Point(6, 142);
             this.rdoBulgogiBurger.Name = "rdoBulgogiBurger";
             this.rdoBulgogiBurger.Size = new System.Drawing.Size(102, 24);
-            this.rdoBulgogiBurger.TabIndex = 0;
+            this.rdoBulgogiBurger.TabIndex = 1;
             this.rdoBulgogiBurger.TabStop = true;
             this.rdoBulgogiBurger.Text = "불고기버거";
             this.rdoBulgogiBurger.UseVisualStyleBackColor = true;
@@ -169,7 +169,7 @@
             this.option.Location = new System.Drawing.Point(230, 98);
             this.option.Name = "option";
             this.option.Size = new System.Drawing.Size(149, 210);
-            this.option.TabIndex = 1;
+            this.option.TabIndex = 2;
             this.option.TabStop = false;
             this.option.Text = "추가 옵션";
             // 
@@ -181,7 +181,7 @@
             this.chkSauce.Location = new System.Drawing.Point(14, 155);
             this.chkSauce.Name = "chkSauce";
             this.chkSauce.Size = new System.Drawing.Size(93, 24);
-            this.chkSauce.TabIndex = 1;
+            this.chkSauce.TabIndex = 3;
             this.chkSauce.Text = "소스 추가";
             this.chkSauce.UseVisualStyleBackColor = true;
             // 
@@ -193,7 +193,7 @@
             this.chkCheese.Location = new System.Drawing.Point(14, 119);
             this.chkCheese.Name = "chkCheese";
             this.chkCheese.Size = new System.Drawing.Size(93, 24);
-            this.chkCheese.TabIndex = 1;
+            this.chkCheese.TabIndex = 2;
             this.chkCheese.Text = "치즈 추가";
             this.chkCheese.UseVisualStyleBackColor = true;
             // 
@@ -217,7 +217,7 @@
             this.chkFried.Location = new System.Drawing.Point(14, 43);
             this.chkFried.Name = "chkFried";
             this.chkFried.Size = new System.Drawing.Size(88, 24);
-            this.chkFried.TabIndex = 1;
+            this.chkFried.TabIndex = 0;
             this.chkFried.Text = "감자튀김";
             this.chkFried.UseVisualStyleBackColor = true;
             // 
@@ -230,7 +230,7 @@
             this.order.Location = new System.Drawing.Point(396, 98);
             this.order.Name = "order";
             this.order.Size = new System.Drawing.Size(245, 220);
-            this.order.TabIndex = 1;
+            this.order.TabIndex = 3;
             this.order.TabStop = false;
             this.order.Text = "주문 내역";
             // 
@@ -262,7 +262,7 @@
             this.btn_order.Location = new System.Drawing.Point(349, 341);
             this.btn_order.Name = "btn_order";
             this.btn_order.Size = new System.Drawing.Size(145, 47);
-            this.btn_order.TabIndex = 2;
+            this.btn_order.TabIndex = 4;
             this.btn_order.Text = "주문하기";
             this.btn_order.UseVisualStyleBackColor = false;
             this.btn_order.Click += new System.EventHandler(this.btn_order_Click);
@@ -276,7 +276,7 @@
             this.reset_button.Location = new System.Drawing.Point(500, 341);
             this.reset_button.Name = "reset_button";
             this.reset_button.Size = new System.Drawing.Size(145, 47);
-            this.reset_button.TabIndex = 2;
+            this.reset_button.TabIndex = 5;
             this.reset_button.Text = "초기화";
             this.reset_button.UseVisualStyleBackColor = false;
             this.reset_button.Click += new System.EventHandler(this.reset_button_Click);
@@ -293,7 +293,7 @@
             this.Controls.Add(this.Menu);
             this.Controls.Add(this.Title);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "2";
             this.Menu.ResumeLayout(false);
             this.Menu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
