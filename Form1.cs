@@ -47,7 +47,6 @@ namespace BurgerKiosk
 
             total.Text = "총 금액 : " + totalCost.ToString("N0") + "원";
 
-            MessageBox.Show(total.Text + " 주문이 완료되었습니다.");
         }
 
         private void reset_button_Click(object sender, EventArgs e)
