@@ -53,6 +53,8 @@ namespace BurgerKiosk
             lstOrder.Items.Clear();
             lblTotalCost.ForeColor = Color.Black;
             lblTotalCost.Text = "총 금액 : 0원";
+
+            rdoHamburger.Checked = true;
         }
 
         private void bulgogi_CheckedChanged(object sender, EventArgs e)
